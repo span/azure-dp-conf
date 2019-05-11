@@ -1,0 +1,95 @@
+dbug: Microsoft.AspNetCore.Hosting.Internal.WebHost[3]
+      Hosting starting
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver[53]
+      Repository contains no viable default key. Caller should generate a key with immediate activation.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[57]
+      Policy resolution states that a new key should be added to the key ring.
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[58]
+      Creating key {3be2afc6-dc96-4d4e-9660-f034aa2c07e9} with creation date 2019-05-11 04:43:00Z, activation date 2019-05-11 04:42:59Z, and expiration date 2019-08-09 04:42:59Z.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[32]
+      Descriptor deserializer type for key {3be2afc6-dc96-4d4e-9660-f034aa2c07e9} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[34]
+      No key escrow sink found. Not writing key {3be2afc6-dc96-4d4e-9660-f034aa2c07e9} to escrow.
+fail: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[48]
+      An error occurred while reading the key ring.
+System.UriFormatException: Invalid URI: The format of the URI could not be determined.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Microsoft.Azure.KeyVault.ObjectIdentifier..ctor(String collection, String identifier)
+   at Microsoft.Azure.KeyVault.KeyVaultClientExtensions.WrapKeyAsync(IKeyVaultClient operations, String keyIdentifier, String algorithm, Byte[] key, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.DataProtection.AzureKeyVault.AzureKeyVaultXmlEncryptor.EncryptAsync(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.AzureKeyVault.AzureKeyVaultXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow)
+info: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter[0]
+      Key ring failed to load during application startup.
+System.UriFormatException: Invalid URI: The format of the URI could not be determined.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Microsoft.Azure.KeyVault.ObjectIdentifier..ctor(String collection, String identifier)
+   at Microsoft.Azure.KeyVault.KeyVaultClientExtensions.WrapKeyAsync(IKeyVaultClient operations, String keyIdentifier, String algorithm, Byte[] key, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.DataProtection.AzureKeyVault.AzureKeyVaultXmlEncryptor.EncryptAsync(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.AzureKeyVault.AzureKeyVaultXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter.Configure(Action`1 next)
+dbug: Microsoft.AspNetCore.Mvc.MvcJsonOptions[0]
+      Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using compatibility value MalformedInputExceptions for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch EnableEndpointRouting in type MvcOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch MaxValidationDepth in type MvcOptions is using compatibility value 32 for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcOptions[0]
+      Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.ApiBehaviorOptions[0]
+      Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using default value False
+dbug: Microsoft.AspNetCore.Mvc.ApiBehaviorOptions[0]
+      Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using default value False
+dbug: Microsoft.AspNetCore.Mvc.ApiBehaviorOptions[0]
+      Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using default value False
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions[0]
+      Compatibility switch AllowAreas in type RazorPagesOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions[0]
+      Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions[0]
+      Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions[0]
+      Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value True
+dbug: Microsoft.AspNetCore.Mvc.MvcViewOptions[0]
+      Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.MvcViewOptions[0]
+      Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using compatibility value True for version Version_2_2
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory[12]
+      Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider
+dbug: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[2]
+      Failed to locate the development https certificate at '(null)'.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[0]
+      Using development certificate: CN=localhost (Thumbprint: B7882D99C66404D5FEC192805F4867DB41C5FAC2)
+Hosting environment: Development
+Content root path: C:\Users\Daniel\projects\omegapoint\azure-dp-conf\Host
+Now listening on: https://localhost:5001
+dbugNow listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+: Microsoft.AspNetCore.Hosting.Internal.WebHost[4]
+      Hosting started
+dbug: Microsoft.AspNetCore.Hosting.Internal.WebHost[0]
+      Loaded hosting startup assembly Host
